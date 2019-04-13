@@ -2,7 +2,7 @@ class Solution:
     # V1: cost 332 ms with 13.4 MB
     # V2: cost 92 ms with 13.2 MB
     #
-    # 不要用set做重复性验证
+    # 慎用set做重复性验证
     # 记住重复字符的index，来避免不必要验证
 
     def length_of_longest_substring_v1(self, s: str) -> int:
