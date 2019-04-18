@@ -8,3 +8,6 @@
 + convert_to_z_str:
     + 用index取代filter, 更快速: np.array(filter(lambda x: x > 5, arr))  ====>  arr[arr > 5]
     + 原生python，使用*zip(*2d_list)来转置矩阵
++ **simulate_regular_expression**:
+    + 使用**动态规划**，优化迭代（递推），缓存中间结果
+    + 动态规划：将一个问题拆成几个子问题，分别求解这些子问题，即可推断出大问题的解(自底向上)。
