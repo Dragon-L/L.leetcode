@@ -6,8 +6,10 @@
 #
 # 输入: [1,8,6,2,5,4,8,3,7]
 # 输出: 49
-
+#
 # cost 80ms with 14.5MB
+#
+# 使用双指针进行双数遍历
 
 from typing import List
 
