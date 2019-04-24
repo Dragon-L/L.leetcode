@@ -36,20 +36,20 @@ class Solution:
     def _two_sum(self, nums: List[int], target: int, start_index: int) -> List[List[int]]:
         result = []
         for i in range(start_index, len(nums)):
-            if target - nums[i] in self.nums_dict:
-                is_three_different_nums = -target != nums[i] and nums[i] < target - nums[i]
-                is_first_two_common_nums = is_three_different_nums or (-target == nums[i] and self.nums_dict[-target] >= 2 and nums[i] < target - nums[i])
-                is_last_two_common_nums = is_first_two_common_nums or (-target != nums[i] and nums[i] == target - nums[i] and self.nums_dict[nums[i]] >= 2)
-                is_three_common_nums = is_last_two_common_nums or (-target == nums[i] and nums[i] == target - nums[i] and self.nums_dict[-target] >= 3)
-
-                if is_three_common_nums:
+            if target - nums[i] >= nums[i] and target - nums[i] in self.nums_dict:
+                num_list = [-target, nums[i], target - nums[i]]
+                for num in num_list:
+                    if num_list.count(num) > self.nums_dict[num]:
+                        break
+                else:
                     result.append([-target, nums[i], target - nums[i]])
         return result
 
+
 solution = Solution()
 
-# assert solution.threeSum([0, 0, 0, 0]) == [[0, 0, 0]]
-# assert solution.threeSum([0, 0]) == []
+assert solution.threeSum([0, 0, 0, 0]) == [[0, 0, 0]]
+assert solution.threeSum([0, 0]) == []
 # assert solution.threeSum([-1, 0, 1, 2, -1, -4]) == [[-1, 0, 1], [-1, -1, 2]]
-# assert solution.threeSum([]) == []
+assert solution.threeSum([]) == []
 assert solution.threeSum([1, 2, -2, -1]) == []
