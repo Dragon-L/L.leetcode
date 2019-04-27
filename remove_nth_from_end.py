@@ -18,8 +18,7 @@
 # cost 56ms and beat 78.02%
 #
 #
-from typing import List
-
+from utils import node_to_list
 
 class ListNode:
     def __init__(self, x):
@@ -42,14 +41,6 @@ class Solution:
         return head
 
 
-def list_node_to_list(list_node: ListNode) -> List:
-    list = []
-    while list_node:
-        list.append(list_node.val)
-        list_node = list_node.next
-    return list
-
-
 def test():
     node = ListNode(1)
     list_node = node
@@ -59,7 +50,7 @@ def test():
 
     solution = Solution()
     # assert list_node_to_list(solution.removeNthFromEnd(node, 2)) == [1, 2, 3, 5]
-    assert list_node_to_list(solution.removeNthFromEnd(ListNode(1), 1)) == []
+    assert node_to_list(solution.removeNthFromEnd(ListNode(1), 1)) == []
 
 
 test()
