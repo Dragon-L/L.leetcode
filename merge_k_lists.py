@@ -11,7 +11,7 @@
 # 输出: 1->1->2->3->4->4->5->6
 #
 # v1： over time
-# v2: 100ms and beat 80.74%
+# v2: 100ms and beat 80.74%, go version: 20ms and beat 82.92%
 # v3: 分治：172ms and beat 37.86%, java version: 7ms and beat 89.31%
 from math import inf
 from typing import List, Tuple
