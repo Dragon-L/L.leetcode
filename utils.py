@@ -1,3 +1,4 @@
+import time
 from typing import List
 
 
@@ -24,3 +25,12 @@ def list_to_node(list: List) -> ListNode:
         list_node.next = ListNode(val)
         list_node = list_node.next
     return node
+
+
+def use_logging(func):
+    def add_log(*args):
+        start = time.time()
+        result = func(*args)
+        print('cost %f'%((time.time() - start)*1000))
+        return result
+    return add_log
